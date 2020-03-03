@@ -2,6 +2,8 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - ControlPlayer
+    - DialogueSystem
+    - ManageNPCDialogueTrigger
     Unity.ProBuilder.Editor.dll:
     - UnityEditor.ProBuilder.EditorToolbar
     - UnityEditor.ProBuilder.ProBuilderEditor
@@ -12,8 +14,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -27,6 +31,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.Mask
     - UnityEngine.UI.RawImage
+    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/level1.unity:
     - Class: 1
@@ -46,6 +51,8 @@ ScriptsOnlyBuild:
     - Class: 43
       Script: {instanceID: 0}
     - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
       Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
@@ -69,23 +76,33 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
+    - Class: 111
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11244}
+      Script: {instanceID: 11264}
     - Class: 114
-      Script: {instanceID: 11524}
+      Script: {instanceID: 11490}
     - Class: 114
-      Script: {instanceID: 11920}
+      Script: {instanceID: 11544}
     - Class: 114
-      Script: {instanceID: 12032}
+      Script: {instanceID: 11940}
     - Class: 114
-      Script: {instanceID: 12570}
+      Script: {instanceID: 12052}
     - Class: 114
-      Script: {instanceID: 13182}
+      Script: {instanceID: 12590}
     - Class: 114
-      Script: {instanceID: 13206}
+      Script: {instanceID: 13202}
     - Class: 114
-      Script: {instanceID: 13666}
+      Script: {instanceID: 13226}
+    - Class: 114
+      Script: {instanceID: 13686}
+    - Class: 114
+      Script: {instanceID: 16134}
+    - Class: 114
+      Script: {instanceID: 25000}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 137
       Script: {instanceID: 0}
@@ -634,8 +651,19 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DialogueSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ManageNPCDialogueTrigger
   platform: 5
   scenePathNames:
   - Assets/Scenes/level1.unity
-  playerPath: D:/School/CompSci/CSC6431/Assignments/Shane_Lesser_LabAssignment06/Unity
-    Project/3D RPG.exe
+  playerPath: E:/School/CompSci/Winter 2020/CSC 6431/Project Build/3D RPG.exe
