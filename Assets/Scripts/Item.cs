@@ -7,11 +7,11 @@ public class Item
 {
     public enum ItemType
     {
-        APPLE = 0, MEAT = 1, GOLD = 2, RED_DIAMOND = 3, BLUE_DIAMOND = 4, YELLOW_DIAMOND = 5, SWORD = 6, BATON = 7
+        APPLE = 0, MEAT = 1, GOLD = 2, RED_DIAMOND = 3, BLUE_DIAMOND = 4, YELLOW_DIAMOND = 5, SWORD = 6, BATON = 7, PURSE = 8, MONEY = 9
 
     }
 
-    public enum ItemFamilyType {FOOD = 0, LOOT = 1, WEAPON = 3}
+    public enum ItemFamilyType {FOOD = 0, LOOT = 1, WEAPON = 3, QUEST = 4}
 
 
     public string name, description;
@@ -124,6 +124,30 @@ public class Item
                 article = "a";
                 break;
 
+            case ItemType.PURSE:
+                name = "Purse";
+                price = 200;
+                healthBenefits = 0;
+                dammage = 0;
+                nb = 1;
+                maxNb = 1;
+                description = "A purple purse. Maybe someone is looking for this?";
+                familyType = ItemFamilyType.QUEST;
+                article = "a";
+                break;
+
+            case ItemType.MONEY:
+                name = "Money";
+                price = 200;
+                healthBenefits = 0;
+                dammage = 0;
+                nb = 1;
+                maxNb = 1000;
+                description = "Some money. Maybe someone dropped this?";
+                familyType = ItemFamilyType.QUEST;
+                article = "some";
+                break;
+
 
         }
         this.type = type;
@@ -146,6 +170,10 @@ public class Item
         else if (this.familyType == Item.ItemFamilyType.LOOT)
         {
             return (Resources.Load<Texture2D>("loot/" + this.name.Replace(" ", "_")));
+        }
+        else if (this.familyType == Item.ItemFamilyType.QUEST)
+        {
+            return (Resources.Load<Texture2D>("quest/" + this.name.Replace(" ", "_")));
         }
         else return null;
 

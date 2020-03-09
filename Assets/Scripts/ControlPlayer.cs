@@ -126,7 +126,7 @@ public class ControlPlayer : MonoBehaviour
         {
             Destroy(objectToPickUp);
             itemToPickUpNearBy = false;
-            userMessage.SetActive(false);
+            StartCoroutine(showPickedUpMessage());
 
         }
         else
@@ -146,8 +146,14 @@ public class ControlPlayer : MonoBehaviour
         string article = objectToPickUp.GetComponent<ObjectToBeCollected>().item.article;
         string message = "You just found " + article + " " + objectToPickUp.GetComponent<ObjectToBeCollected>().item.name + "\n Collect? (y/n)";
         GameObject.Find("userMessageText").GetComponent<Text>().text = message;
+    }
 
-
-
+    IEnumerator showPickedUpMessage()
+    {
+        string article = objectToPickUp.GetComponent<ObjectToBeCollected>().item.article;
+        string message = "You just picked up " + article + " " + objectToPickUp.GetComponent<ObjectToBeCollected>().item.name;
+        GameObject.Find("userMessageText").GetComponent<Text>().text = message;
+        yield return new WaitForSeconds(1.5f);
+        userMessage.SetActive(false);
     }
 }
