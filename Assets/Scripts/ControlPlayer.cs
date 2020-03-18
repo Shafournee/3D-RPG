@@ -14,6 +14,8 @@ public class ControlPlayer : MonoBehaviour
     bool itemToPickUpNearBy = false;
     GameObject userMessage;
 
+    public bool shopIsDisplayed;
+
     GameObject healthUI, skillsUI, shopUI;
     [Header("Health Settings")]
     [Tooltip("Health value between 0 and 100")]
@@ -38,29 +40,40 @@ public class ControlPlayer : MonoBehaviour
         userMessage = GameObject.Find("userMessage");
         userMessage.SetActive(false);
         GameObject.Find("healthBar").GetComponent<ManageBar>().SetValue(health);
+        shopUI = GameObject.Find("shopUI");
+        shopUI.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        info = anim.GetCurrentAnimatorStateInfo(0);
-        speed = Input.GetAxis("Vertical") * 4f;
-        rotatioAroundY = Input.GetAxis("Horizontal");
-        anim.SetFloat("speed", speed);
-        gameObject.transform.Rotate(0, rotatioAroundY, 0);
-        if (speed > 0) controller.Move(transform.forward * speed * 2.0f * Time.deltaTime);
-
-        if (itemToPickUpNearBy)
+        if (!shopIsDisplayed)
         {
+            info = anim.GetCurrentAnimatorStateInfo(0);
+            speed = Input.GetAxis("Vertical") * 4f;
+            rotatioAroundY = Input.GetAxis("Horizontal");
+            anim.SetFloat("speed", speed);
+            gameObject.transform.Rotate(0, rotatioAroundY, 0);
+            if (speed > 0) controller.Move(transform.forward * speed * 2.0f * Time.deltaTime);
 
-            if (Input.GetKeyDown(KeyCode.Y)) PickUpObject1();
-            if (Input.GetKeyDown(KeyCode.N))
+            if (itemToPickUpNearBy)
             {
-                GameObject.Find("userMessageText").GetComponent<Text>().text = "";
-                userMessage.SetActive(false);
-            }
 
+                if (Input.GetKeyDown(KeyCode.Y)) PickUpObject1();
+                if (Input.GetKeyDown(KeyCode.N))
+                {
+                    GameObject.Find("userMessageText").GetComponent<Text>().text = "";
+                    userMessage.SetActive(false);
+                }
+
+            }
         }
+        
+
+        //if(Input.GetKeyDown(KeyCode.B))
+        //{
+            //GameObject.Find("shopSystem").GetComponent<ShopSystem>().Init();
+        //}
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -106,6 +119,15 @@ public class ControlPlayer : MonoBehaviour
             PickUpObject2();
 
         }
+        if (other.gameObject.name == "shop")
+        {
+
+            shopIsDisplayed = true;
+            anim.SetFloat("speed", 0);
+            displayShopUI();
+            GameObject.Find("shopSystem").GetComponent<ShopSystem>().Init(); ;
+
+        }
 
     }
 
@@ -146,6 +168,13 @@ public class ControlPlayer : MonoBehaviour
         string article = objectToPickUp.GetComponent<ObjectToBeCollected>().item.article;
         string message = "You just found " + article + " " + objectToPickUp.GetComponent<ObjectToBeCollected>().item.name + "\n Collect? (y/n)";
         GameObject.Find("userMessageText").GetComponent<Text>().text = message;
+    }
+
+    public void displayShopUI()
+    {
+
+        shopUI.SetActive(true);
+
     }
 
     IEnumerator showPickedUpMessage()

@@ -79,7 +79,11 @@
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\ManageBar.cs" />
     <Compile Include="Assets\Scripts\ManageNPCDialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\ManageShopItems.cs" />
     <Compile Include="Assets\Scripts\ObjectToBeCollected.cs" />
+    <Compile Include="Assets\Scripts\PayScript.cs" />
+    <Compile Include="Assets\Scripts\ShopItem.cs" />
+    <Compile Include="Assets\Scripts\ShopSystem.cs" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <None Include="Assets\Resources\dialogues.xml" />
     <Reference Include="Unity.Timeline.Editor">

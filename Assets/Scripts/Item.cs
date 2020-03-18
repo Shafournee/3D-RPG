@@ -7,7 +7,8 @@ public class Item
 {
     public enum ItemType
     {
-        APPLE = 0, MEAT = 1, GOLD = 2, RED_DIAMOND = 3, BLUE_DIAMOND = 4, YELLOW_DIAMOND = 5, SWORD = 6, BATON = 7, PURSE = 8, MONEY = 9
+        APPLE = 0, MEAT = 1, GOLD = 2, RED_DIAMOND = 3, BLUE_DIAMOND = 4, YELLOW_DIAMOND = 5, SWORD = 6, BATON = 7, PURSE = 8, MONEY = 9, AXE = 10, STEW = 11,
+        WHITE_DIAMOND = 12
 
     }
 
@@ -15,7 +16,7 @@ public class Item
 
 
     public string name, description;
-    public int price, healthBenefits, dammage, nb, maxNb;
+    public int originalPrice, discountPrice, healthBenefits, dammage, nb, maxNb;
     public ItemType type;
     public string article;
     public ItemFamilyType familyType;
@@ -28,7 +29,8 @@ public class Item
 
             case ItemType.APPLE:
                 name = "Apple";
-                price = 50;
+                originalPrice = 50;
+                discountPrice = originalPrice;
                 healthBenefits = 10;
                 dammage = 0;
                 nb = 1;
@@ -40,7 +42,8 @@ public class Item
 
             case ItemType.MEAT:
                 name = "Meat";
-                price = 50;
+                originalPrice = 50;
+                discountPrice = originalPrice;
                 healthBenefits = 30;
                 dammage = 0;
                 nb = 1;
@@ -52,7 +55,8 @@ public class Item
 
             case ItemType.RED_DIAMOND:
                 name = "Red Diamond";
-                price = 250;
+                originalPrice = 250;
+                discountPrice = originalPrice;
                 healthBenefits = 0;
                 dammage = 0;
                 nb = 1;
@@ -64,7 +68,8 @@ public class Item
 
             case ItemType.YELLOW_DIAMOND:
                 name = "Yellow Diamond";
-                price = 200;
+                originalPrice = 200;
+                discountPrice = originalPrice;
                 healthBenefits = 0;
                 dammage = 0;
                 nb = 1;
@@ -76,7 +81,8 @@ public class Item
 
             case ItemType.BLUE_DIAMOND:
                 name = "Blue Diamond";
-                price = 100;
+                originalPrice = 100;
+                discountPrice = originalPrice;
                 healthBenefits = 0;
                 dammage = 0;
                 nb = 1;
@@ -89,7 +95,8 @@ public class Item
 
             case ItemType.GOLD:
                 name = "Gold";
-                price = 100;
+                originalPrice = 100;
+                discountPrice = originalPrice;
                 healthBenefits = 0;
                 dammage = 0;
                 nb = 1;
@@ -102,7 +109,8 @@ public class Item
 
             case ItemType.SWORD:
                 name = "Sword";
-                price = 100;
+                originalPrice = 100;
+                discountPrice = originalPrice;
                 healthBenefits = 0;
                 dammage = 10;
                 nb = 1;
@@ -114,7 +122,8 @@ public class Item
 
             case ItemType.BATON:
                 name = "Baton";
-                price = 50;
+                originalPrice = 50;
+                discountPrice = originalPrice;
                 healthBenefits = 0;
                 dammage = 5;
                 nb = 1;
@@ -126,7 +135,8 @@ public class Item
 
             case ItemType.PURSE:
                 name = "Purse";
-                price = 200;
+                originalPrice = 200;
+                discountPrice = originalPrice;
                 healthBenefits = 0;
                 dammage = 0;
                 nb = 1;
@@ -138,7 +148,8 @@ public class Item
 
             case ItemType.MONEY:
                 name = "Money";
-                price = 200;
+                originalPrice = 200;
+                discountPrice = originalPrice;
                 healthBenefits = 0;
                 dammage = 0;
                 nb = 1;
@@ -148,6 +159,44 @@ public class Item
                 article = "some";
                 break;
 
+            case ItemType.AXE:
+                name = "Axe";
+                originalPrice = 200;
+                discountPrice = originalPrice;
+                healthBenefits = 0;
+                dammage = 150;
+                nb = 1;
+                maxNb = 1000;
+                description = "Let me axe you a question.";
+                familyType = ItemFamilyType.WEAPON;
+                article = "an";
+                break;
+
+            case ItemType.STEW:
+                name = "Stew";
+                originalPrice = 100;
+                discountPrice = originalPrice;
+                healthBenefits = 75;
+                dammage = 0;
+                nb = 1;
+                maxNb = 1000;
+                description = "A nice hearty stew.";
+                familyType = ItemFamilyType.FOOD;
+                article = "a";
+                break;
+
+            case ItemType.WHITE_DIAMOND:
+                name = "White Diamond";
+                originalPrice = 1000;
+                discountPrice = originalPrice;
+                healthBenefits = 0;
+                dammage = 0;
+                nb = 1;
+                maxNb = 1000;
+                description = "The most rare and expensive diamond.";
+                familyType = ItemFamilyType.LOOT;
+                article = "a";
+                break;
 
         }
         this.type = type;
