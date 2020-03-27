@@ -72,6 +72,7 @@
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
     <Compile Include="Assets\Scripts\CameraFollowPlayer.cs" />
+    <Compile Include="Assets\Scripts\CheckCollision.cs" />
     <Compile Include="Assets\Scripts\ControlPlayer.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
     <Compile Include="Assets\Scripts\DialogueSystem.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Assets\Scripts\ManageBar.cs" />
     <Compile Include="Assets\Scripts\ManageNPCDialogueTrigger.cs" />
     <Compile Include="Assets\Scripts\ManageShopItems.cs" />
+    <Compile Include="Assets\Scripts\ManageTargetHealth.cs" />
     <Compile Include="Assets\Scripts\ObjectToBeCollected.cs" />
     <Compile Include="Assets\Scripts\PayScript.cs" />
     <Compile Include="Assets\Scripts\ShopItem.cs" />

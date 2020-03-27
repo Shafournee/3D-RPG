@@ -13,6 +13,8 @@ public class ControlPlayer : MonoBehaviour
     GameObject objectToPickUp;
     bool itemToPickUpNearBy = false;
     GameObject userMessage;
+    GameObject weapon;
+    bool weaponIsActive = false;
 
     public bool shopIsDisplayed;
 
@@ -42,6 +44,9 @@ public class ControlPlayer : MonoBehaviour
         GameObject.Find("healthBar").GetComponent<ManageBar>().SetValue(health);
         shopUI = GameObject.Find("shopUI");
         shopUI.SetActive(false);
+
+        weapon = GameObject.Find("playerWeapon").gameObject;
+        weapon.SetActive(false);
     }
 
     // Update is called once per frame
@@ -68,11 +73,45 @@ public class ControlPlayer : MonoBehaviour
 
             }
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+
+            weaponIsActive = !weaponIsActive;
+            if (weaponIsActive) anim.SetTrigger("useWeapon");
+            else anim.SetTrigger("putWeaponBack");
+
+        }
+        if (info.IsName("UseWeapon"))
+        {
+            if (info.normalizedTime % 1.0 >= .50)
+            {
+                weapon.SetActive(true);
+
+            }
+
+        }
+        if (info.IsName("PutWeaponBack"))
+        {
+            if (info.normalizedTime % 1.0 >= .50)
+            {
+                weapon.SetActive(false);
+
+            }
+            else weapon.SetActive(true);
+
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+
+            if (weaponIsActive) anim.SetTrigger("attackWithWeapon");
+
+        }
 
         //if(Input.GetKeyDown(KeyCode.B))
         //{
-            //GameObject.Find("shopSystem").GetComponent<ShopSystem>().Init();
+        //GameObject.Find("shopSystem").GetComponent<ShopSystem>().Init();
         //}
     }
 
