@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ControlPlayer : MonoBehaviour
 {
@@ -223,5 +224,21 @@ public class ControlPlayer : MonoBehaviour
         GameObject.Find("userMessageText").GetComponent<Text>().text = message;
         yield return new WaitForSeconds(1.5f);
         userMessage.SetActive(false);
+    }
+
+    public void DecreaseHealth(int amount)
+    {
+
+        health -= amount;
+        if (health <= 0) health = 0;
+        GameObject.Find("healthBar").GetComponent<ManageBar>().SetValue(health);
+        if (health <= 0)
+        {
+
+            health = 50;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        }
+
     }
 }

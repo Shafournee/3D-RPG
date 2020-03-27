@@ -1,12 +1,15 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - CheckCollision
+    - ControlNPCGuard
     - ControlPlayer
     - DialogueSystem
     - InventorySystem
     - ManageBar
     - ManageNPCDialogueTrigger
     - ManageShopItems
+    - ManageTargetHealth
     - ObjectToBeCollected
     - PayScript
     - ShopItem
@@ -21,8 +24,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -62,6 +67,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
     - Class: 65
@@ -89,49 +96,55 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11244}
+      Script: {instanceID: 11246}
     - Class: 114
-      Script: {instanceID: 11304}
+      Script: {instanceID: 11306}
     - Class: 114
-      Script: {instanceID: 11334}
+      Script: {instanceID: 11336}
     - Class: 114
-      Script: {instanceID: 11422}
+      Script: {instanceID: 11396}
     - Class: 114
-      Script: {instanceID: 11450}
+      Script: {instanceID: 11426}
     - Class: 114
-      Script: {instanceID: 11480}
+      Script: {instanceID: 11454}
     - Class: 114
-      Script: {instanceID: 11534}
+      Script: {instanceID: 11484}
     - Class: 114
-      Script: {instanceID: 11604}
+      Script: {instanceID: 11538}
     - Class: 114
-      Script: {instanceID: 11734}
+      Script: {instanceID: 11608}
     - Class: 114
-      Script: {instanceID: 11930}
+      Script: {instanceID: 11738}
     - Class: 114
-      Script: {instanceID: 12042}
+      Script: {instanceID: 11936}
     - Class: 114
-      Script: {instanceID: 12082}
+      Script: {instanceID: 12048}
     - Class: 114
-      Script: {instanceID: 12552}
+      Script: {instanceID: 12088}
     - Class: 114
-      Script: {instanceID: 12584}
+      Script: {instanceID: 12370}
     - Class: 114
-      Script: {instanceID: 12586}
+      Script: {instanceID: 12560}
     - Class: 114
-      Script: {instanceID: 12812}
+      Script: {instanceID: 12592}
     - Class: 114
-      Script: {instanceID: 13198}
+      Script: {instanceID: 12594}
     - Class: 114
-      Script: {instanceID: 13222}
+      Script: {instanceID: 12820}
     - Class: 114
-      Script: {instanceID: 13426}
+      Script: {instanceID: 13206}
     - Class: 114
-      Script: {instanceID: 13684}
+      Script: {instanceID: 13230}
     - Class: 114
-      Script: {instanceID: 13712}
+      Script: {instanceID: 13234}
     - Class: 114
-      Script: {instanceID: 30198}
+      Script: {instanceID: 13436}
+    - Class: 114
+      Script: {instanceID: 13694}
+    - Class: 114
+      Script: {instanceID: 13722}
+    - Class: 114
+      Script: {instanceID: 27532}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -146,6 +159,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
+    - Class: 195
+      Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
     - Class: 213
@@ -155,6 +170,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 238
       Script: {instanceID: 0}
     - Class: 258
       Script: {instanceID: 0}
@@ -213,6 +230,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.ProBuilder.dll
     namespaceName: UnityEngine.ProBuilder
     className: PreferenceDictionary
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PayScript
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -365,6 +388,12 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: hi
+  - hash:
+      serializedVersion: 2
       Hash: 32f6d1d5a09e5c94c633a32edd3e6836
     assemblyName: Unity.ProBuilder.dll
     namespaceName: UnityEngine.ProBuilder
@@ -453,6 +482,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.ProBuilder.dll
     namespaceName: UnityEngine.ProBuilder
     className: ColliderBehaviour
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CheckCollision
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -611,6 +646,12 @@ ScriptsOnlyBuild:
     className: ControlPlayer
   - hash:
       serializedVersion: 2
+      Hash: c7a1cfbcd815f35b6700d8538ef4094e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ManageTargetHealth
+  - hash:
+      serializedVersion: 2
       Hash: 88cc9df3c6fc697bfbeacd24c0d6f2d7
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
@@ -737,12 +778,18 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
+      Hash: 55f24e5b31bb5e1b7bb0ecf4406a723f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ControlNPCGuard
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: PayScript
+    className: GuardDestroyItems
   platform: 5
   scenePathNames:
   - Assets/Scenes/level1.unity
-  playerPath: D:/School/CompSci/CSC6431/Assignments/Shane_Lesser_LabAssignment09/3D
-    RPG.exe
+  playerPath: D:/School/CompSci/CSC6431/Assignments/Shane_Lesser_LabAssignment10/Unity
+    Project 1/3D RPG.exe

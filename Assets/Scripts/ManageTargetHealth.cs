@@ -57,8 +57,8 @@ public class ManageTargetHealth : MonoBehaviour
 
     void DestroyTarget()
     {
+        GetComponent<ControlNPCGuard>().Dies();
         Destroy(gameObject, 5);
-
     }
     public void DecreaseHealth(int increment)
     {
