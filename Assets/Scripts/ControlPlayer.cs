@@ -190,6 +190,8 @@ public class ControlPlayer : MonoBehaviour
             itemToPickUpNearBy = false;
             StartCoroutine(showPickedUpMessage());
 
+            GameObject.Find("GameManager").GetComponent<QuestSystem>().Notify(QuestSystem.possibleActions.acquire_a, objectToPickUp.GetComponent<ObjectToBeCollected>().item.name);
+
         }
         else
         {

@@ -22,14 +22,15 @@ public class DialogueSystem : MonoBehaviour
 
     private void Awake()
     {
-        dialogueBox = GameObject.Find("dialogueBox");
-        dialoguePanel = GameObject.Find("dialoguePanel");
+        
         
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        dialogueBox = GameObject.Find("dialogueBox");
+        dialoguePanel = GameObject.Find("dialoguePanel");
         nameOfCharacter = gameObject.name;
 
         nbDialogues = calculateNbDialogues();
@@ -39,7 +40,7 @@ public class DialogueSystem : MonoBehaviour
         loadDialogues();
         nbDialogues = calculateNbDialogues();
 
-        dialoguePanel.SetActive(false);
+        //dialoguePanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -60,6 +61,8 @@ public class DialogueSystem : MonoBehaviour
                     GameObject.Find("Player").GetComponent<ControlPlayer>().EndTalking();
 
                     currentDialogueIndex = 0;
+
+                    GameObject.Find("GameManager").GetComponent<QuestSystem>().Notify(QuestSystem.possibleActions.talk_to, nameOfCharacter);
 
 
                 }

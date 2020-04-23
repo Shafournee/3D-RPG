@@ -59,12 +59,29 @@ public class ManageTargetHealth : MonoBehaviour
     {
         GetComponent<ControlNPCGuard>().Dies();
         Destroy(gameObject, 5);
+        GameObject.Find("GameManager").GetComponent<QuestSystem>().Notify(QuestSystem.possibleActions.destroy_one, gameObject.name);
     }
     public void DecreaseHealth(int increment)
     {
         Debug.Log("hit");
+        gameObject.GetComponent<ControlNPCGuard>().SetGuardType(ControlNPCGuard.GUARD_TYPE.CHASER);
         hitFlash = true;
         alpha = .5f;
         SetHealth(this.health - increment);
+        AlertOtherGuards();
+    }
+
+    void AlertOtherGuards()
+    {
+
+        GameObject[] otherGuards;
+        otherGuards = GameObject.FindGameObjectsWithTag("target");
+        for (int i = 0; i < otherGuards.Length; i++)
+        {
+
+            otherGuards[i].GetComponent<ControlNPCGuard>().SetGuardType(ControlNPCGuard.GUARD_TYPE.CHASER);
+
+        }
+
     }
 }

@@ -12,7 +12,7 @@ public class ShopItem : MonoBehaviour
     void Start()
     {
         quantity = 0;
-        UpdateQuantityLabel();
+        //UpdateQuantityLabel();
         
     }
 

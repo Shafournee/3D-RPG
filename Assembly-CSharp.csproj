@@ -71,26 +71,35 @@
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
+    <Compile Include="Assets\Scripts\CameraFollowCloseRange.cs" />
     <Compile Include="Assets\Scripts\CameraFollowPlayer.cs" />
     <Compile Include="Assets\Scripts\CheckCollision.cs" />
     <Compile Include="Assets\Scripts\ControlNPCGuard.cs" />
     <Compile Include="Assets\Scripts\ControlPlayer.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
     <Compile Include="Assets\Scripts\DialogueSystem.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GenerateMaze.cs" />
     <Compile Include="Assets\Scripts\GuardDestroyItems.cs" />
     <Compile Include="Assets\Scripts\InventorySystem.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
+    <Compile Include="Assets\Scripts\LocationToReach.cs" />
     <Compile Include="Assets\Scripts\ManageBar.cs" />
     <Compile Include="Assets\Scripts\ManageNPCDialogueTrigger.cs" />
     <Compile Include="Assets\Scripts\ManageShopItems.cs" />
     <Compile Include="Assets\Scripts\ManageTargetHealth.cs" />
+    <Compile Include="Assets\Scripts\ManageXP.cs" />
+    <Compile Include="Assets\Scripts\MoveTestPlayer.cs" />
     <Compile Include="Assets\Scripts\ObjectToBeCollected.cs" />
     <Compile Include="Assets\Scripts\PayScript.cs" />
+    <Compile Include="Assets\Scripts\PlayerInfo.cs" />
+    <Compile Include="Assets\Scripts\QuestSystem.cs" />
+    <Compile Include="Assets\Scripts\RotateTowardsPlayer.cs" />
     <Compile Include="Assets\Scripts\ShopItem.cs" />
     <Compile Include="Assets\Scripts\ShopSystem.cs" />
-    <Compile Include="Assets\hi.cs" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <None Include="Assets\Resources\dialogues.xml" />
+    <None Include="Assets\Resources\quest.xml" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Unity Projects/3D-RPG/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
